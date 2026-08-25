@@ -12,7 +12,7 @@ int main()
     //non-numerical
     char char_example = 'a';
     bool bool_example = true;
-
+    
     cout << "int_example: " << sizeof(int_example) << endl;
     cout << "float_example: " << sizeof(float_example) << endl;
     cout << "double_example: " << sizeof(double_example) << endl;

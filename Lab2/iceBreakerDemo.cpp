@@ -4,6 +4,9 @@
  * TO DO: 
  * Add <vector>, <cstdlib>, and <ctime>​
  */
+#include <vector>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -20,6 +23,7 @@ using namespace std;
 //------------------------PROTOTYPE-------------------------------------------
 void promptFile(vector<string> &); 
 void printVec(vector<string>);
+int ranGen();
 
 /**
  * @brief randomly returns a number from 0 to 5.
@@ -49,14 +53,14 @@ int ranGen(){
  * ​​​Return a bool instead in order to indicate whether the operation
  * succeeded or not
  */
-void readFile(string filename, vector<string> & vec) {
+bool readFile(string filename, vector<string> & vec) {
 
    ifstream inputFile(filename);
 
     //error handling
     if (!inputFile.is_open()) {
         cerr << "Error: Could not open file\n";
-        return;
+        return false;
     }
 
     string line;
@@ -66,7 +70,7 @@ void readFile(string filename, vector<string> & vec) {
     }
 
     inputFile.close();
-    return;
+    return true;
 }
 /**
  * @brief writes to filename with the first column from v0, second column from v1
@@ -88,11 +92,12 @@ void readFile(string filename, vector<string> & vec) {
  * -  pass by value (e.g. vector<string> v0),
  * -  pass by const reference (e.g. const vector<string> & v0),
  */
-void writeFile(string filename, vector<string> v0, vector<string> v1){
+bool writeFile(string filename, const vector<string> & v0, const vector<string> & v1){
 
     ofstream outputFile(filename);
      if (!outputFile) {
         cout << "Error: Could not create data.csv" << endl;
+        return false;
     }
 
     // write under the structure:
@@ -101,7 +106,9 @@ void writeFile(string filename, vector<string> v0, vector<string> v1){
         outputFile << v0[i] << "," << v1[ranGen()] << endl;
     }
     outputFile.close();
-
+    {
+        return true;
+    }
 }
 
 

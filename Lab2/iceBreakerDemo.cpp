@@ -38,10 +38,36 @@ int ranGen(int questions);
  * 
  * @return int: index of question
  */
-int ranGen(int questions){
+
+ #include <random>
+
+ int ranGen(int questions)
+ {
+    int randomNumber = 0;
+
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<int> distrib (0, questions - 1);
+
+    randomNumber = distrib(gen);
+
+    return randomNumber;
+ }
+
+/*int ranGen(int questions)
+{
+    for(int i = 0; i < questions; ++i)
+    {
+        int randomNumber = 0;
+        randomNumber = distrib(gen);
+    }
+    return randomNumber;
+}/*
+
+/*int ranGen(int questions){
     int randomNumber = rand() % questions;  // 0 through 5
     return randomNumber;
-}
+}*/
 
 /**
  * @brief reads contents of filename and populates into vec
@@ -111,10 +137,9 @@ bool writeFile(string filename, const vector<string> & v0, const vector<string> 
     }
 }
 
-
 int main()
 {
-    srand(time(nullptr));
+    //srand(time(nullptr));
     vector<string> roster;
     vector<string> qBank;
     readFile("2310_F26_Rosters.csv", roster);

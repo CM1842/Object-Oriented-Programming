@@ -23,7 +23,7 @@ using namespace std;
 //------------------------PROTOTYPE-------------------------------------------
 void promptFile(vector<string> &); 
 void printVec(vector<string>);
-int ranGen();
+int ranGen(int questions);
 
 /**
  * @brief randomly returns a number from 0 to 5.
@@ -38,8 +38,8 @@ int ranGen();
  * 
  * @return int: index of question
  */
-int ranGen(){
-    int randomNumber = rand() % 6;  // 0 through 5
+int ranGen(int questions){
+    int randomNumber = rand() % questions;  // 0 through 5
     return randomNumber;
 }
 
@@ -103,7 +103,7 @@ bool writeFile(string filename, const vector<string> & v0, const vector<string> 
     // write under the structure:
     // Student_Name, Question_#
     for(int i = 0; i < v0.size(); i++){
-        outputFile << v0[i] << "," << v1[ranGen()] << endl;
+        outputFile << v0[i] << "," << v1[ranGen(v1.size())] << endl;
     }
     outputFile.close();
     {

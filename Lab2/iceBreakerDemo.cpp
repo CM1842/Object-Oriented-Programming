@@ -24,6 +24,8 @@ using namespace std;
 void promptFile(vector<string> &); 
 void printVec(vector<string>);
 int ranGen(int questions);
+bool readFile(string filename, vector<string> & vec);
+bool writeFile(string filename, const vector<string> & v0, const vector<string> & v1);
 
 /**
  * @brief randomly returns a number from 0 to 5.
@@ -52,17 +54,7 @@ int ranGen(int questions);
     randomNumber = distrib(gen);
 
     return randomNumber;
- }
-
-/*int ranGen(int questions)
-{
-    for(int i = 0; i < questions; ++i)
-    {
-        int randomNumber = 0;
-        randomNumber = distrib(gen);
-    }
-    return randomNumber;
-}/*
+}
 
 /*int ranGen(int questions){
     int randomNumber = rand() % questions;  // 0 through 5

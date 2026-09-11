@@ -41,6 +41,11 @@ bool writeFile(string filename, const vector<string> & v0, const vector<string> 
  * @return int: index of question
  */
 
+int ranGen(int questions){
+    int randomNumber = rand() % questions;  // 0 through 5
+    return randomNumber;
+}
+
  #include <random>
 
  int ranGen(int questions)
@@ -55,11 +60,6 @@ bool writeFile(string filename, const vector<string> & v0, const vector<string> 
 
     return randomNumber;
 }
-
-/*int ranGen(int questions){
-    int randomNumber = rand() % questions;  // 0 through 5
-    return randomNumber;
-}*/
 
 /**
  * @brief reads contents of filename and populates into vec

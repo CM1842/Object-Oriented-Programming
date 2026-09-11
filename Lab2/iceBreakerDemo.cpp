@@ -41,10 +41,10 @@ bool writeFile(string filename, const vector<string> & v0, const vector<string> 
  * @return int: index of question
  */
 
-int ranGen(int questions){
+/*int ranGen(int questions){
     int randomNumber = rand() % questions;  // 0 through 5
     return randomNumber;
-}
+}*/
 
  #include <random>
 

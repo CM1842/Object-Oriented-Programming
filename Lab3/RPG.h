@@ -10,14 +10,15 @@ const int max_hits_taken = 3;
 class RPG
 {
     public:
-        
+
         RPG();
         RPG(string name, int hits_taken, float luck, float exp, int level);
         
-
+        //mutators
         bool isAlive() const;
         void setHitsTaken(int new_hits);
 
+        //accessors
         const string getName();
         const int getHitsTaken();
         const float getLuck();
@@ -30,6 +31,5 @@ class RPG
         float luck;
         float exp;
         int level;
-
 };
 #endif

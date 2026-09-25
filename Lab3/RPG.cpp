@@ -3,13 +3,11 @@
 
 RPG::RPG()
 {
-    name = "NPC";
-    hits_taken = 0;
-    luck = 0.1;
-    exp = 50.0;
-    level = 1;
-
-}
+    this -> name = "NPC";
+    this -> hits_taken = 0;
+    this -> luck = 0.1;
+    this -> exp = 50.0;
+    this -> level = 1;
 
 string getName()
 {
@@ -30,7 +28,7 @@ float getLuck()
 float getExp()
 {
     float exp1;
-    cout << "Enter Exp: ";
+    cout << "Enter Exp value: ";
     cin >> exp1;
     return exp1;
 }
@@ -43,29 +41,32 @@ int getLevel()
     return lvl1; 
 }
 
-void setHitsTaken(int new_hits);
+void RPG::setHitsTaken(int new_hits);
 {
-    new_hits = new_hits //find a way to impliment luck into the hit and count the hit if it hits
+    int hitsT = 0;
+    int randomNum  = rand() % 10; // change to 0.1 to make it similar to float luck value
+    
+    if(randomNum < luck)
+    {
+        hits_taken = hits_taken + 1;
+    }
+    else 
+    {
+        hits_taken = hits_taken;
+    }
+        
+
 }
 
-bool isAlive()
+const bool RPG::isAlive()
 {
-    if(max_hits_taken != )
+    if(max_hits_taken != hits_taken)
+    {
         return false;
+    }
     else
     {
         return true;
     }
 }
-/*int main()
-{
-    cout << getName() << endl;
-    return 0;
 }
-string getName()
-{
-    string player1;
-    cout << "Enter your name: ";
-    getline(cin,player1);
-    return player1;
-}*/

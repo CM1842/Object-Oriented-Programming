@@ -8,6 +8,7 @@ RPG::RPG()
     this -> luck = 0.1;
     this -> exp = 50.0;
     this -> level = 1;
+};
 
 string getName()
 {
@@ -41,7 +42,7 @@ int getLevel()
     return lvl1; 
 }
 
-void RPG::setHitsTaken(int new_hits);
+void RPG::setHitsTaken(int new_hits)
 {
     int hitsT = 0;
     int randomNum  = rand() % 10; // change to 0.1 to make it similar to float luck value
@@ -54,19 +55,16 @@ void RPG::setHitsTaken(int new_hits);
     {
         hits_taken = hits_taken;
     }
-        
-
 }
 
-const bool RPG::isAlive()
+bool RPG::isAlive() const
 {
     if(max_hits_taken != hits_taken)
     {
-        return false;
+        return true;
     }
     else
     {
-        return true;
+        return false;
     }
-}
 }

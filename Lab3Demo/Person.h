@@ -5,8 +5,9 @@ using namespace std;
 
 class Person
 {
-    Person();
-    Person(string name, int age, string occupation, bool lives_in_IE);
+    public:
+        Person();
+        Person(string name, int age, string occupation, bool lives_in_IE);
 
 
         void updateName(string name);
@@ -19,7 +20,12 @@ class Person
         string getOccupation();
         bool getLivesInIE();
         bool isOlderThan();
+    
+    private:
+        string name;
+        int age;
+        string occupation;
+        bool livesInIE;
 
 };
-
 #endif

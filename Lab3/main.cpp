@@ -20,8 +20,8 @@ int main()
     p1.isAlive();
     p2.isAlive();
 
-    cout << "\nP2 hits taken";
-    cout << "0 is dead, 1 is alive\n";
+    cout << "\nP2 hits taken 3";
+    cout << "\n0 is dead, 1 is alive\n";
     
     return 0;
 }

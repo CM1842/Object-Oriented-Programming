@@ -10,41 +10,50 @@ RPG::RPG()
     this -> level = 1;
 };
 
-string getName()
+string RPG::getName() const
 {
-    string player1;
+    return name;
+    /*string player1;
     cout << "Enter your name: ";
     cin >> player1;
     return player1;
+    */
 }
 
-float getLuck()
+float RPG::getLuck() const
 {
-    float luck1;
+    return luck;
+    /*float luck1;
     cout << "Enter luck value: ";
     cin >> luck1;
     return luck1;
+    */
 }
 
-float getExp()
+float RPG::getExp() const
 {
-    float exp1;
+    return exp;
+    /*float exp1;
     cout << "Enter Exp value: ";
     cin >> exp1;
     return exp1;
+    */
 }
 
-int getLevel()
+int RPG::getLevel() const
 {
-    int lvl1;
+    return level;
+    /*int lvl1;
     cout << "Enter level: ";
     cin >> lvl1;
     return lvl1; 
+    */
 }
 
 void RPG::setHitsTaken(int new_hits)
 {
-    int hitsT = 0;
+    hits_taken = new_hits;
+    /*int hitsT = 0;
     int randomNum  = rand() % 10; // change to 0.1 to make it similar to float luck value
     
     if(randomNum < luck)
@@ -54,7 +63,7 @@ void RPG::setHitsTaken(int new_hits)
     else 
     {
         hits_taken = hits_taken;
-    }
+    }*/
 }
 
 bool RPG::isAlive() const

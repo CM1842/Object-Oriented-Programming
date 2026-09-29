@@ -5,11 +5,15 @@ using namespace std;
 int main()
 {
     RPG p1 = RPG("Wiz", 0, 0.2, 60, 1);
-    RPG p2 = RPG();
+    RPG p2 = RPG("Name", 0, 0.1, 50, 1);
+
 
     printf("%s Current Stats\n", p1.getName().c_str());
     printf("Hits Taken: %i\t Luck: %f\t Level: %i\t", p1.getHitsTaken(), p1.getLuck(), p1.getExp(), p1.getLevel());
     
+    printf("%s Current Stats\n", p2.getName().c_str());
+    printf("Hits Taken: %i\t Luck: %f\t Level: %i\t", p2.getHitsTaken(), p2.getLuck(), p2.getExp(), p2.getLevel());
+
     cout << "\nP2 hits taken";
     cout << "0 is dead, 1 is alive\n";
     

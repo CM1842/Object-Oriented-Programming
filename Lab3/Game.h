@@ -19,5 +19,7 @@ class Game
         void printFinalResult();
 
         int selectPlayer();
+
+        ~Game();
 };
 #endif

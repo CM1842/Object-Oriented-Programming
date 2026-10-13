@@ -10,7 +10,8 @@ const int max_hits_taken = 3;
 class RPG
 {
     public:
-
+    
+        //constructor
         RPG();
         RPG(string name, int hits_taken, float luck, float exp, int level);
         
@@ -19,7 +20,7 @@ class RPG
         void setHitsTaken(int new_hits);
 
         void setName(string name);
-        void ExpLevel();
+        void updateExpLevel();
         void attack(RPG* opponent);
         void printStats();
 
@@ -30,7 +31,9 @@ class RPG
         float getExp() const;
         int getLevel() const;
 
-
+        //deconstructor
+        ~RPG();
+        
     private:
         string name;
         int hits_taken;

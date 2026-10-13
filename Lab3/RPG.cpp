@@ -1,4 +1,5 @@
 #include <iostream>
+#include <random>
 #include "RPG.h"
 
 RPG::RPG()
@@ -22,11 +23,6 @@ RPG::RPG(string name, int hits_taken, float luck, float exp, int level)
 string RPG::getName() const
 {
     return name;
-    /*string player1;
-    cout << "Enter your name: ";
-    cin >> player1;
-    return player1;
-    */
 }
 
 int RPG::getHitsTaken() const
@@ -37,47 +33,21 @@ int RPG::getHitsTaken() const
 float RPG::getLuck() const
 {
     return luck;
-    /*float luck1;
-    cout << "Enter luck value: ";
-    cin >> luck1;
-    return luck1;
-    */
 }
 
 float RPG::getExp() const
 {
     return exp;
-    /*float exp1;
-    cout << "Enter Exp value: ";
-    cin >> exp1;
-    return exp1;
-    */
 }
 
 int RPG::getLevel() const
 {
     return level;
-    /*int lvl1;
-    cout << "Enter level: ";
-    cin >> lvl1;
-    return lvl1; 
-    */
 }
 
 void RPG::setHitsTaken(int new_hits)
 {
     hits_taken = new_hits;
-    /*int hitsT = 0;
-    int randomNum  = rand() % 10; // change to 0.1 to make it similar to float luck value
-    
-    if(randomNum < luck)
-    {
-        hits_taken = hits_taken + 1;
-    }
-    else 
-    {
-        hits_taken = hits_taken;
-    }*/
 }
 
 bool RPG::isAlive() const
@@ -89,5 +59,36 @@ bool RPG::isAlive() const
     else
     {
         return false;
+    }
+}
+
+void RPG::setName(string name)
+{
+    this -> name = name;
+}
+
+void RPG::updateExpLevel()
+{
+    exp = exp + 50; 
+    
+    if(exp >= 100)
+    {
+        level = level + 1;
+        exp = 0;
+        luck = luck + 0.1 ;
+    }
+}
+
+void RPG::attack(RPG* opponent)
+{
+    bool hit = false;
+
+    if(((rand() % 11) / 10.0)  > hit_factor * (*opponent).getLuck()) 
+    {
+        hit = true;
+    }
+    if(hit == true)
+    {
+        (*opponent).setHitsTaken((*opponent).getHitsTaken());
     }
 }

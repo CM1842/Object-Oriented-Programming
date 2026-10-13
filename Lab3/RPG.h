@@ -18,13 +18,19 @@ class RPG
         bool isAlive() const;
         void setHitsTaken(int new_hits);
 
+        void setName(string name);
+        void ExpLevel();
+        void attack(RPG* opponent);
+        void printStats();
+
         //accessors
         string getName() const;
         int getHitsTaken() const;
         float getLuck() const;
         float getExp() const;
         int getLevel() const;
-    
+
+
     private:
         string name;
         int hits_taken;

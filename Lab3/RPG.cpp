@@ -62,6 +62,8 @@ bool RPG::isAlive() const
     }
 }
 
+
+// New functions
 void RPG::setName(string name)
 {
     this -> name = name;
@@ -82,8 +84,13 @@ void RPG::updateExpLevel()
 void RPG::attack(RPG* opponent)
 {
     bool hit = false;
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_real_distribution<double> dis(0.0, 1.0);
 
-    if(((rand() % 11) / 10.0)  > hit_factor * (*opponent).getLuck()) 
+    float rand_num = dis(gen);
+
+    if(rand_num  > hit_factor * (*opponent).getLuck()) 
     {
         hit = true;
     }
@@ -91,4 +98,13 @@ void RPG::attack(RPG* opponent)
     {
         (*opponent).setHitsTaken((*opponent).getHitsTaken());
     }
+}
+
+void RPG:: printStats()
+{
+    cout << "Name: %s        Hits Taken: %i        Luck:%f         Exp:%f          Level: %i          Status:%s", name, hits_taken, luck, exp, level;
+}
+
+RPG::~RPG()
+{
 }

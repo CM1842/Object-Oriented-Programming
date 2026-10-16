@@ -4,8 +4,8 @@
 #include <vector>
 #include <set>
 
-vector <RPG*> players;
-set <int> live_players;
+//vector <RPG*> players;
+//set <int> live_players;
 
 class Game
 {
@@ -21,5 +21,9 @@ class Game
         int selectPlayer();
 
         ~Game();
+        
+    private: 
+        vector <RPG*> players;
+        set <int> live_players; 
 };
 #endif

@@ -10,7 +10,7 @@ const int max_hits_taken = 3;
 class RPG
 {
     public:
-    
+
         //constructor
         RPG();
         RPG(string name, int hits_taken, float luck, float exp, int level);

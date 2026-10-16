@@ -96,7 +96,7 @@ void RPG::attack(RPG* opponent)
     }
     if(hit == true)
     {
-        (*opponent).setHitsTaken((*opponent).getHitsTaken());
+        opponent->setHitsTaken(opponent->getHitsTaken() + 1);
     }
 }
 

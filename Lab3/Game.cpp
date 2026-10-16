@@ -60,6 +60,8 @@ void Game::battleRound()
 
     while(player1 -> isAlive() & player2 -> isAlive())
     {
+
+        
         player1 -> attack(player2);
         if(player2 -> isAlive())
         {
@@ -75,6 +77,7 @@ void Game::battleRound()
     {
         endRound(player2,player1,playerIndex1);
     }
+    
 }
 
 void Game::gameLoop()
@@ -89,7 +92,7 @@ void Game::printFinalResult()
 {
     for(int i = 0; i < players.size(); i++)
     {
-        players[i] ;//add print stats
+        players[i]->RPG::printStats();//add print stats
     }   
 }
 

@@ -39,9 +39,7 @@ void Game::endRound(RPG *winner, RPG *loser, int loserIndex)
     (*winner).RPG::setHitsTaken(0);
     live_players.erase(loserIndex); 
     (*winner).RPG::updateExpLevel();
-    cout << winner->getName() << "won against" << loser->getName();
-    
-    //"NPC_%i won against NPC_%i",live_players,loserIndex ; // check the values after comma
+    cout << winner->getName() << " won against " << loser->getName() << "\n" ;
 }
 
 void Game::battleRound()

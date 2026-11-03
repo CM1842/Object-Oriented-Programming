@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Pokemon.h"
 
-Pokemon ::Pokemon()
+Pokemon::Pokemon()
 {
     name = "unidentified";
     hp = 0;
